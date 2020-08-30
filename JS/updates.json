@@ -1,0 +1,72 @@
+[{
+    "state": "Maharasta",
+    "newcases": 1150,
+    "newdeath": 33,
+    "totlecases": 70000,
+    "totledeaths":  5400,
+    "totlerecovers": 33000
+},
+{
+    "state": "Gujarat",
+    "newcases": 1150,
+    "newdeath": 33,
+    "totlecases": 70000,
+    "totledeaths":  5400,
+    "totlerecovers": 33000
+
+},
+{
+    "state": "Delhi",
+    "newcases": 1150,
+    "newdeath": 33,
+    "totlecases": 70000,
+    "totledeaths":  5400,
+    "totlerecovers": 33000
+
+},
+{
+    "state": "Karnatak",
+    "newcases": 1150,
+    "newdeath": 33,
+    "totlecases": 70000,
+    "totledeaths":  5400,
+    "totlerecovers": 33000
+
+},
+{
+    "state": "Rajasthan",
+    "newcases": 1150,
+    "newdeath": 33,
+    "totlecases": 70000,
+    "totledeaths":  5400,
+    "totlerecovers": 33000
+
+},
+{
+    "state": "Kerla",
+    "newcases": 1150,
+    "newdeath": 33,
+    "totlecases": 70000,
+    "totledeaths":  5400,
+    "totlerecovers": 33000
+
+},
+{
+    "state": "Uttar Pradesh",
+    "newcases": 1150,
+    "newdeath": 33,
+    "totlecases": 70000,
+    "totledeaths":  5400,
+    "totlerecovers": 33000
+
+},
+{
+    "state": "Hariyana",
+    "newcases": 1150,
+    "newdeath": 33,
+    "totlecases": 70000,
+    "totledeaths":  5400,
+    "totlerecovers": 33000
+
+}
+]
