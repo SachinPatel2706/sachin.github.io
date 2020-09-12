@@ -68,5 +68,41 @@
     "totledeaths":  5400,
     "totlerecovers": 33000
 
+},
+{
+    "state": "Hariyana",
+    "newcases": 1150,
+    "newdeath": 33,
+    "totlecases": 70000,
+    "totledeaths":  5400,
+    "totlerecovers": 33000
+
+},
+{
+    "state": "Hariyana",
+    "newcases": 1150,
+    "newdeath": 33,
+    "totlecases": 70000,
+    "totledeaths":  5400,
+    "totlerecovers": 33000
+
+},
+{
+    "state": "Hariyana",
+    "newcases": 1150,
+    "newdeath": 33,
+    "totlecases": 70000,
+    "totledeaths":  5400,
+    "totlerecovers": 33000
+
+},
+{
+    "state": "Hariyana",
+    "newcases": 1150,
+    "newdeath": 33,
+    "totlecases": 70000,
+    "totledeaths":  5400,
+    "totlerecovers": 33000
+
 }
 ]

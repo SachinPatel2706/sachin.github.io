@@ -12,148 +12,126 @@
     <script>
 
         window.addEventListener('load', function () {
-            changeTab('home')
+            changeTab('home');
+            
         })
+       
     </script>
 
 </head>
-
-
-
 <body>
-    <div class="div_NavBar">
-        <ul>
-            <li> <a id="home_tab" href="#" onclick="changeTab('home')" class="active">Home</a></li>
-            <li> <a id="about_tab" href="#" onclick="changeTab('about')">About</a></li>
-            <li> <a href="#">Corona</a>
-                <ul>
-                    <li><a href="#" onclick="changeTab('covid19_India')">India</a></li>
-                    <li><a href="#" onclick="changeTab('covid19_World')">World</a></li>
-                </ul>
-            </li>
-            <li> <a href="#">Project</a>
-                <ul>
-                    <li><a href="#" onclick="changeTab('keepNotes')">KeepNote</a></li>
-                    <li><a href="#" onclick="changeTab('keepNotes')">ToDoList</a></li>
-                    <li><a href="#" onclick="changeTab('keepNotes')">KeepNote</a></li>
-                </ul>
-            </li>
-            <li> <a href="#" onclick="changeTab('blog')">Blog</a>
-                <ul>
-                    <li><a href="#" onclick="changeTab('covid19_India')">CreateBlog</a></li>
-
-                </ul>
-            </li>
-        </ul>
-    </div>
-
-    <!-- ..................................Home................................ -->
-
-    <div class="div_Home active" id="home">
-        <div class="profile">
-            <img src="../Images/sachin2.jpg" />
-            <div class="profilText">
-                <h2>Sachin Patel</h2>
-                <h3>Kamrej, Surat</h3>
-                <p>Human Being</p>
-            </div>
-            <div class="profileFonts">
-                <a href="https://www.facebook.com/">
-                    <i class="fa fa-facebook-square fa-3x"></i>
-                </a>
-                <a href="https://www.instagram.com/">
-                    <i class="fa fa-instagram fa-3x"></i>
-                </a>
-                <a href="https://www.linkedin.com/">
-                    <i class="fa fa-linkedin-square fa-3x"></i>
-                </a>
-                <a href="https://twitter.com/login">
-                    <i class="fa fa-twitter-square fa-3x"></i>
-                </a>
-            </div>
+    <div class="backImg">
+        <div class="navBar" id="navBar">
+            <ul>
+                <li> <a id="home_tab" href="#" onclick="changeTab('home')" class="active">Home</a></li>
+                <li> <a id="about_tab" href="#" onclick="changeTab('about')">About</a></li>
+                <li> <a href="#">Corona</a>
+                    <ul>
+                        <li><a href="#" onclick="changeTab('covid19_India')">India</a></li>
+                        <li><a href="#" onclick="changeTab('covid19_World')">World</a></li>
+                    </ul>
+                </li>
+                <li> <a href="#">Project</a>
+                    <ul>
+                        <li><a href="#" onclick="changeTab('keepNotes')">KeepNote</a></li>
+                        <li><a href="#" onclick="changeTab('keepNotes')">ToDoList</a></li>
+                        <li><a href="#" onclick="changeTab('keepNotes')">KeepNote</a></li>
+                    </ul>
+                </li>
+                <li> <a href="#" onclick="changeTab('blog')">Blog</a>
+                    <ul>
+                        <li><a href="#" onclick="changeTab('covid19_India')">CreateBlog</a></li>
+                    </ul>
+                    
+                </li>
+            </ul>
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+            </a>
         </div>
-    </div>
+    
 
-    <!-- ..............................About Me............................. -->
-    <div class="div_About" id="about">
+        <!-- ...........................................Home....................................... -->
 
-    </div>
-
-
-    <!-- ...........................Corona Virus Upadates(Using API)........................... -->
-    <div id="covid19">
-        <div id="covid19_India">
-            <!-- <input id="search" type="text" placeholder="Search here..." /> -->
-            <h2>Corona Virus Updates of India</h2>
-            <div class="table_Div" id="table_Div">          
-                <h3 id="lastUpdate">Last Upadate :</h3>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>States</th>
-                            <th>New Cases</th>
-                            <th>New Death</th>
-                            <th>Total Case</th>
-                            <th>Total Recovered</th>
-                            <th>Total Death</th>
-                        </tr>
-                    </thead>
-                    <tbody class="state_List" id="state_List">
-
-                    </tbody>
-                </table>
-
+        <div class="div_Home mainDiv" id="home">
+            <div class="profile">
+                <img src="Images/sachin2.jpg" />
+                <div class="profilText">
+                    <h2>Sachin Patel</h2>
+                    <h3>Kamrej, Surat</h3>
+                    <p>Human Being</p>
+                </div>
+                <div class="profileFonts">
+                    <a href="https://www.facebook.com/">
+                        <i class="fa fa-facebook-square fa-3x"></i>
+                    </a>
+                    <a href="https://www.instagram.com/">
+                        <i class="fa fa-instagram fa-3x"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/">
+                        <i class="fa fa-linkedin-square fa-3x"></i>
+                    </a>
+                    <a href="https://twitter.com/login">
+                        <i class="fa fa-twitter-square fa-3x"></i>
+                    </a>
+                </div>
             </div>
         </div>
 
-        <div id="covid19_World">
-            <h2>Corona Virus Updates of World</h2>
-            <div class="table_DivWorld" id="table_Div">
-                <h3 id="lastUpdateWorld">Last Upadate :</h3>
-                <table class="tableWorld">
-                    <thead>
-                        <tr>
-                            <th>Contries</th>
-                            <th>New Cases</th>
-                            <th>New Death</th>
-                            <th>Total Case</th>
-                            <th>Total Recovered</th>
-                            <th>Total Death</th>
-                        </tr>
-                    </thead>
-                    <tbody class="contry_List" id="contry_List">
+        <!-- .......................................About Me....................................... -->
+        <div class="div_About mainDiv" id="about">
+            <div class="myAbout"></div>
 
-                    </tbody>
-                </table>
+        </div>
 
+        <!-- ...........................Corona Virus Upadates(Using API)........................... -->
+        <div id="covid19 mainDiv">
+            <div id="covid19_India">
+                <!-- <input id="search" type="text" placeholder="Search here..." /> -->
+                <h2 id="head_India"></h2>
+                <div class="table_Div" id="table_Div">
+                    <h3 id="lastUpdate">Last Upadate :</h3>
+                    <table class="tableIndia" id="tableIndia" >                        
+                    </table>
+                </div>
+            </div>
+
+            <div id="covid19_World">
+                <h2>Corona Virus Updates of World</h2>
+                <div class="table_DivWorld" id="table_Div">
+                    <h3 id="lastUpdateWorld">Last Upadate :</h3>
+                    <table class="tableWorld" id="tableWorld">
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- .....................................Keep Notes....................................... -->
+        <div class="div_KeepNotes mainDiv" id="keepNotes">
+            <div class="centre_Div">
+                <h2 id="header">Take Notes</h2>
+                <input class="add_Title" id="add_Title" type="text" placeholder="Title" />
+                <textarea class="add_Note" id="add_Note" rows="" cols="" placeholder="Write Here..."></textarea>
+                <Button class="btn_Add" id="btn_Add">Add Note</Button>
+
+            </div>
+            <!-- <div class="div_Add" id="div_Add">
+            </div> -->
+
+            <div class="notes_Div" id="notes">
             </div>
         </div>
 
-    </div>
+         <!-- ........................................Blog......................................... -->
+        <div class="div_Blog mainDiv" id="blog">
+            <div class="myBlogDiv" id="myBlogDiv">
 
-    <!-- ...........................Keep Notes........................... -->
-    <div class="div_KeepNotes" id="keepNotes">
-        <div class="centre_Div">
-            <h2 id="header">Take Notes</h2>
-            <input class="add_Title" id="add_Title" type="text" placeholder="Title" />
-            <textarea class="add_Note" id="add_Note" rows="" cols="" placeholder="Write Here..."></textarea>
-            <!-- <Button class="btn_Add" id="btn_Add">+</Button> -->
+            </div>
 
-        </div>
-        <div class="div_Add" id="div_Add">
-        </div>
-
-        <div class="notes_Div" id="notes">
         </div>
     </div>
-
-    <div class="div_Blog" id="blog">
-        <div class="myBlogDiv" id="myBlogDiv">
-
-        </div>
-
-    </div>
-
 </body>
 
 <script src="JS/index.js"></script>

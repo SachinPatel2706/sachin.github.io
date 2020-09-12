@@ -1,6 +1,7 @@
 console.log("This is my Website");
 showNotes();
 
+
 async function renderPage(page) {
 
     switch (page) {
@@ -35,6 +36,14 @@ function changeTab(name) {
     document.getElementById(name).classList.add("active");
 }
 
+function myFunction() {
+    var x = document.getElementById("navBar");
+    if (x.className === "navBar") {
+      x.className += " responsive";
+    } else {
+      x.className = "navBar";
+    }
+  }
 
 // ------------------------------------KeepNotes----------------------------------------------
 async function keepNotes() {
@@ -42,7 +51,7 @@ async function keepNotes() {
     let div_Add = document.getElementById('div_Add');
 
 
-    div_Add.addEventListener("click", function (e) {
+    btn_Add.addEventListener("click", function (e) {
         let add_Title = document.getElementById('add_Title');
         let add_Note = document.getElementById('add_Note');
         let notes = localStorage.getItem('notes');
@@ -58,8 +67,6 @@ async function keepNotes() {
                 // header.style.color ='red'
             }, 5000)
             return false;
-
-
         }
         else if (notes !== null) {
             noteObj = JSON.parse(notes);
@@ -118,102 +125,126 @@ function deleteNote(index) {
 
 
 // -------------------covid19_India---------------------------
-
-async function covid19India() {
-    let response = await fetch('JS/updates.json');
-
-    if (response.ok) {
-        document.getElementById('state_List').innerHTML = "";
-        let json = await response.json();
-
-        for (let i = 0; i < json.length; i++) {
-            document.getElementById('state_List').insertAdjacentHTML('beforeend', updatesIndia(json[i]))
-        }
+let i = 0;
+let txt = 'Corona Virus Updates of India';
+function typeWriter() {
+    if (i < txt.length) {
+        document.getElementById("head_India").innerHTML += txt.charAt(i);
+        i++;
     }
-    function updatesIndia(obj) {
-        return `               
-                <tr>
-                    <td>${obj.state}</td>
-                    <td>${obj.newcases}</td>
-                    <td>${obj.newdeath}</td>
-                    <td>${obj.totlecases}</td>
-                    <td>${obj.totlerecovers}</td>
-                    <td>${obj.totledeaths}</td>
-                </tr>
-               
-                `
-    }
-
-    let search = document.getElementById('search');
-    search.addEventListener('input', function(){
-        let filter = search.value
-        console.log(filter);
-
-        let state_List = document.getElementById('state_List');
-        let tr = state_List.getElementsByTagName('tr');
-
-        for (let i=0; i < tr.length; i++){
-            tr[i].style.display = "none";
-            let td = tr[i].getElementsByTagName('td');
-            for(let j=0; j < td.length; j++){
-                let cell = tr[i].getElementsByTagName('td')[j];
-                if ((cell)) {
-                    if (cell.innerHTML.indexOf(filter) > -1){
-                        tr[i].style.display = "block";
-                        break;
-                    }
-                    
-                }
-            }
-        }
-    })
 }
+setInterval(typeWriter,100);
 
-// -------------------covid19_World---------------------------
-
-async function covid19World() {
+let urlIndia = 'https://api.covid19india.org/data.json';
+async function covid19India(url) {
     try {
-        document.getElementById('contry_List').innerHTML = "";
-        const getData = await fetch('http://api.covid19api.com/summary');
+        const getData = await fetch(url);
         const getJson = await getData.json();
-        const myData = getJson.Countries;
-        console.log(myData);
-        // console.log(myData[i-1]['Country']);
-        for (let i = 0; i < (myData['Countries'].length); i++) {
-            document.getElementById('contry_List').insertAdjacentHTML('beforeend', updatesWorld(myData['Countries'][i]))
+        console.log(getJson);
+        if (getData.ok) {
+            show(getJson);
+        }
+        function show(getJson) {
+            let tab = `
+                    <tr>
+                        <th>States</th>
+                        <th>New Confirmed</th>
+                        <th>New Recovered</th>
+                        <th>New Deaths</th>
+                        <th>Total Confirmed</th>
+                        <th>Total Recovered</th>
+                        <th>Total Deaths</th>
+                     </tr> `
+            for (let r of getJson.statewise) {
+                tab += `
+                <tbody class="state_List" id="state_List">
+                    <tr>
+                        <td>${r.state} </td> 
+                        <td>${r.NewConfirmed}</td> 
+                        <td>${r.NewRecovered}</td> 
+                        <td>${r.NewDeaths}</td> 
+                        <td>${r.confirmed}</td>  
+                        <td>${r.recovered}</td> 
+                        <td>${r.deaths}</td> 
+                    </tr>
+                </tbody>
+                `
+            }
+            document.getElementById('tableIndia').innerHTML = tab
         }
     }
     catch (error) {
         console.log(`The Error is ${error}`)
     }
 
-    function updatesWorld(obj) {
-        return `
-                <tr>
-                    <td>${obj.Country}</td>
-                    <td>${obj.NewConfirmed}</td>
-                    <td>${obj.NewDeaths}</td>
-                    <td>${obj.TotalConfirmed}</td>
-                    <td>${obj.TotalRecovered}</td>
-                    <td>${obj.TotalDeaths}</td>
-                 </tr>`
-    }
-
 }
+covid19India(urlIndia)
 
-async function myBlog(){
+
+
+
+
+
+// -------------------covid19_World---------------------------
+
+let urlWorld = 'http://api.covid19api.com/summary';
+async function covid19World(url) {
+    try {
+        const getData = await fetch(url);
+        const getJson = await getData.json();
+        console.log(getJson);
+        if (getData.ok) {
+            show(getJson);
+        }
+        function show(getJson) {
+            let tab = `
+                    <tr>
+                        <th>Countries</th>
+                        <th>New Confirmed</th>
+                        <th>New Recovered</th>
+                        <th>New Deaths</th>
+                        <th>Total Confirmed</th>
+                        <th>Total Recovered</th>
+                        <th>Total Deaths</th>
+                    </tr>`
+            for (let r of getJson.Countries) {
+                tab += `
+                <tbody class="contry_List" id="contry_List">
+                    <tr>
+                        <td>${r.Country} </td> 
+                        <td>${r.NewConfirmed}</td> 
+                        <td>${r.NewRecovered}</td> 
+                        <td>${r.NewDeaths}</td> 
+                        <td>${r.TotalConfirmed}</td>  
+                        <td>${r.TotalRecovered}</td> 
+                        <td>${r.TotalDeaths}</td> 
+                    </tr>
+                </tbody>
+                `
+            }
+            document.getElementById('tableWorld').innerHTML = tab
+        }
+    }
+    catch (error) {
+        console.log(`The Error is ${error}`)
+    }
+}
+covid19World(urlWorld);
+
+
+async function myBlog() {
     document.getElementById('myBlogDiv').innerHTML = "";
     let blogResponce = await fetch('JS/blog.json');
 
     if (blogResponce.ok) {
         let json = await blogResponce.json();
 
-        for (let i = 0; i<json.length; i++){
+        for (let i = 0; i < json.length; i++) {
             document.getElementById('myBlogDiv').insertAdjacentHTML('beforeend', updatesBlog(json[i]))
         }
     }
 
-    function updatesBlog(obj){
+    function updatesBlog(obj) {
         return `
                 <div class="content_Div" id="content_Div">
                 <h2>${obj.title}</h2>

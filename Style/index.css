@@ -3,96 +3,110 @@
     margin: 0rem;
     box-sizing: border-box;
 }
-/* .......................................NavBar...................................... */
 
 html{
     font-size: 62.5%;
 }
 
-body{
+.backImg{
     width: 100%;
     height: auto;
-    background: url("../Images/bg3.jpg") transparent no-repeat;
-    background-size: cover;
-    
-    
+    overflow: auto;
+    background: url("../Images/bg3.jpg") transparent no-repeat fixed;
+    background-size: 100% 100%; 
  }
-
- /* ----------------------------------NavBar--------------------------------------------- */
  
- .div_NavBar{
-    background-color: rgba(15, 2, 2, 0.233);
+.mainDiv{
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+}
+
+ /* ----------------------------------------NavBar--------------------------------------------- */
+ .navBar {
     width: 100%;
     height: 100%;
-    float: right;
-    text-align: right;
+    background-color: rgba(15, 2, 2, 0.233);
+    transition: top 0.4s;
 }
 
-.div_NavBar ul{
-    margin-right: 8rem;
+.navBar ul {
+    text-align: end;
+    list-style-type: none;
+    margin-right: 6rem;
 }
 
-.div_NavBar ul li{
+.navBar ul li {
     display: inline-block;
-    list-style: none;
-    padding: 0.8rem;
+    padding: 0.4rem 0.4rem;
     position: relative;
-    
 }
 
-.div_NavBar ul li a { 
-    color: white;   
+.navBar ul li a {
+    color: white;
     display: block;
     text-decoration: none;
-    border-radius: 2.2rem;
-    font-size: 2.5rem;
-    padding: 0.4rem;
+    text-align: center;
+    padding: 0.6rem 0.4rem;
+    text-decoration: none;
+    border-radius: 1.6rem;
+    font-size: 2.4rem;
 }
-.div_NavBar ul li a:hover,.div_NavBar ul li a:focus, .div_NavBar ul li a:active {
+.icon{
+    display: block;
+    font-size: 2rem;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.333);
+}
+
+.navBar ul li a:hover,
+.navBar ul li a:focus,
+.navBar ul li a:active {
     background-color: white;
-    letter-spacing: 0.2rem;
+    letter-spacing: 0.12rem;
     color: rgba(255, 0, 0, 0.545);
 }
 
-.div_NavBar ul ul {
+.navBar ul ul {
     position: absolute;
-    background: transparent;
     background-color: rgba(0, 0, 0, 0.190);
-    left: 2rem;
+    left: 0;
     top: 100%;
-    display: none;   
-}
-.div_NavBar ul ul li{
-    float: none;
-    width: 100%;   
-}
-.div_NavBar ul li:hover > ul{
-    display: block;  
-}
-.div_NavBar ul ul li a{
-    font-size: 2.0rem;
-    /* padding: 0.rem; */
-}
-.div_NavBar ul ul li a:hover, .div_NavBar ul ul li a:active, .div_NavBar ul ul li a:focus{
-        letter-spacing: 0.1rem;
-        background-color: white;
-        color: rgba(255, 0, 0, 0.545);     
+    display: none;
+    border-radius: 0.6rem;
 }
 
+.navBar ul li:hover>ul {
+    display: block;
+}
+
+.navBar ul ul li a {
+    font-size: 2.0rem;
+    padding: 0.6rem;
+}
+
+.navBar ul ul li a:hover,
+.navBar ul ul li a:active,
+.navBar ul ul li a:focus {
+    letter-spacing: 0.1rem;
+    background-color: white;
+    color: rgba(255, 0, 0, 0.545);
+}
 /* -----------------------------------------Home--------------------------------------------------- */
 
 .profile{
     width: 30rem;
     background-color: rgba(28, 29, 31, 0.373);
-    padding: 3.0rem 0;
     border-radius: 6%;
-    display:inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
     text-align: center;
-    margin-left: 40%;
-    margin-top: 6%;
+    padding: 2rem 0;
 }
 img{
-    height: 20rem;
+    height: 22rem;
     border-radius: 70%;
 }
 
@@ -112,140 +126,160 @@ img{
     font-weight: 500;
 }
 .profileFonts{
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 1.2rem;
 }
 i{
     color: white;
     cursor: pointer; 
-    margin-left: 4%;
+    margin: 0.8rem;
     
 }
 
 /* .....................................div_About.................................... */
-.div_About{
-    width: 100%;
-    /* margin-top: 23%; */
-    position: relative;
-}
-/* .div_About::after{
+
+.myAbout::after{
     content: "";
     width: 30rem;
     height: 30rem;
     position: absolute;
     left: 0;
-    bottom: 0;
+    top: 0;
+    margin-top: 6rem;
     background-image: url('../Images/sachin3.jpg');
     background-size: 100% 100%;
     border-radius: 50%;
     margin-left: 1%;
-} */
+}
 
 
 
 /* .....................................div_Covid19 for India.................................... */
-#covid19{
-    background: transparent;
-    width: 100%;      
-}
-#search{
-    width: 25rem;
-    height: 3.3rem;
-    float: left;
-    margin-left: 4rem;
-    border-radius: 1.6rem;
-    padding-left: 1rem;
-    font-size: 1.6rem;
-    letter-spacing: 0.2rem;
-    background: transparent;
-    border: hidden;
-    font-weight: 600;
-    border-bottom: 0.4rem solid black
-}
-#covid19_India{
-    margin: 0 2rem;   
-    
-}
+
 #covid19_India h2{
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
+    text-shadow: 0rem 0.3rem 0.3rem  white,
+                     0rem 0.3rem 0.3rem  white,
+                     0rem 0.3rem 0.3rem  white, 
+                     0rem 0.3rem 0.3rem  black                 
 }
 
 .table_Div{
-    margin: 0.5rem 6rem;
+    margin: 1.5rem 2rem;
     background-color: rgba(117, 116, 30, 0.333);
     border: transparent;
-    border: 2px solid rgba(221, 210, 210, 0);
-    border-radius: 2rem; 
+    border: 2px solid black;
+    border-radius: 2rem;
+    overflow-x:auto;
 }
 .table_Div h3{
     text-align: end;
     margin-right: 10rem;
-    color: lawngreen;
 }
-.table_Div .table{
-    display: inline-flexbox;
-    justify-content: center;
+.tableIndia{
+    border-collapse: collapse;
     width: 100%;
 }
-.table_Div .table tr th{
-    font-size: 2rem;
-    padding: 1rem 5rem;
-    color: black;
-    font-weight: bold;
+
+.tableIndia .state_List tr td:nth-child(1) {
+    font-weight: bold; 
+}
+.tableIndia .state_List:nth-child(1){
+    background-color: red;
+}
+.tableIndia .state_List:nth-child(even){
+    background-color: rgba(141, 23, 23, 0.111);
 }
 
-.table_Div .state_List tr td{
-    font-size: 1.8rem;
-    padding: 1rem 5rem;
-    color:white;
-    text-align: center;
+.tableIndia .state_List tr:hover{
+    background-color: rgba(221, 221, 221, 0.333);
+    letter-spacing: 0.1rem;
+       
 }
+
+.tableIndia th {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    border: 1px solid #ddd;
+    background-color: rgba(0, 128, 0, 0.333);
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+  }
+  .tableIndia .state_List td{
+    color: white;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
 
 
 /* .....................................div_Covid19 for World.................................... */
+
 
 #covid19_World h2{
     text-align: center;
     font-size: 2.5rem;
     font-weight: bold;
+    text-shadow: 0rem 0.3rem 0.3rem  white,
+                     0rem 0.3rem 0.3rem  white,
+                     0rem 0.3rem 0.3rem  white, 
+                     0rem 0.3rem 0.3rem  black                 
 }
+
 .table_DivWorld{
-    margin: 0.5rem 3rem;
+    margin: 1.5rem 2rem;
     background-color: rgba(117, 116, 30, 0.333);
     border: transparent;
-    border: 2px solid rgba(221, 210, 210, 0);
+    border: 2px solid black;
     border-radius: 2rem;
+    overflow-x:auto;
 }
 .table_DivWorld h3{
     text-align: end;
     margin-right: 10rem;
 }
-.table_DivWorld .tableWorld tr th{
-    font-size: 2rem;
-    padding: 1rem 5rem;
-    color: black;
-    font-weight: bold;
+.tableWorld{
+    border-collapse: collapse;
+    width: 100%;
 }
 
-.table_DivWorld .contry_List tr td{
-    font-size: 1.8rem;
-    padding: 1rem 5rem;
-    color:white;
-    text-align: center;
-   
+.tableWorld .contry_List tr td:nth-child(1) {
+    font-weight: bold; 
 }
+
+
+.tableWorld .contry_List tr:hover{
+    background-color: rgba(221, 221, 221, 0.333);
+    letter-spacing: 0.1rem;
+       
+}
+
+.tableWorld th {
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    border: 1px solid #ddd;
+    background-color: rgba(0, 128, 0, 0.333);
+    text-align: center;
+    color: black;
+    font-size: 2rem;
+  }
+  .tableWorld .contry_List td{
+    color: white;
+    border: 1px solid #ddd;
+    border-radius: 1rem;
+    padding: 1rem;
+    text-align: center;
+    font-size: 1.8rem;
+}
+
 
 /* .....................................div_KeepNotes.................................... */
-
-.div_KeepNotes{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    height: 100vh;
-}
 
 .centre_Div{
     float: left;
@@ -300,27 +334,30 @@ i{
     color: white;
 }
 button {
-    font-size: 0.1rem;
+    font-weight: 700;
+    font-size: 1.6rem;
     outline: none;
 }
 
 .btn_Add{
-    border-radius: 100%;
-    width: 8%;
-    margin-left: 92%;
+    border-radius: 10%;
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 0.1rem;
     cursor: pointer;
-    background-color: #ffff0052;
+    background: transparent;
     transition-property: all;
     transition-duration: 0.5s;
     transition-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 button.btn_Add:hover , button.btn_Add:focus, button.btn_Add:active{
     background-color: #5ee65e;
-    letter-spacing: 0.125rem;
-    word-spacing: 0.2rem;
+    letter-spacing: 0.1rem;
+    word-spacing: 0.1rem;
 }
 
 .div_Add{
+    display: block;
     width: 38%;
     height: 30%;
     margin-left: 61%;
@@ -330,39 +367,40 @@ button.btn_Add:hover , button.btn_Add:focus, button.btn_Add:active{
 .notes_Div{
     float: left;
     width: 100%;
+    margin: 1rem 0;
 }
 .notesList_Div{
-    display: inline-table;
-    margin: 1.5rem;
-    background: transparent;
+    display: inline-block;
+    margin: 0.6rem 0.6rem;
     width: 15%;
-    max-width: 20%;
-    height: 50%;
+    max-height: 10%;
+    padding: 0.2rem 0;
+    background-color: wheat;
     border:  0.2rem solid rgba(0, 0, 0, 0.397);
     border-radius: 0.6rem;
     text-transform: capitalize;
-    text-align: initial;
-    vertical-align: text-top;
     box-shadow: 0.2rem 0.2rem 0.2rem 0.1rem black;
-    text-overflow: unset;
+    overflow: hidden;
 }
 .show_Title{
     padding: 0.6rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
     font-size: 2.1rem;
+   
 }
 .show_note{
-    padding: 0.3rem;
-    font-size: 1.4rem;
+    padding: 0.6rem;
+    font-size: 1.8rem;
 }
 .note_Delete{
     border-radius: 50%;
     padding: 0.2rem;
     border-radius: 100%;
-    width: 11%;
+    width: 15%;
+    margin-left: 16rem;
+    margin-top: 3rem;
     text-align: center;
-    margin-left: 88%;
     font-size: 1.6rem;
     background-color: rgba(255, 255, 0, 0.418);
     cursor: pointer;
@@ -372,14 +410,12 @@ button.btn_Add:hover , button.btn_Add:focus, button.btn_Add:active{
 }
 .note_Delete:hover{
     background-color: red;
+    font-size: 1.8rem;
 }
 
 
 /* .....................................div_Blog.................................... */
-.div_Blog{
-    width: 100%;
-    height: auto;
-}
+
 .myBlogDiv{
     display: inline-block;
     height: 100%;
@@ -435,430 +471,154 @@ button.btn_Add:hover , button.btn_Add:focus, button.btn_Add:active{
 }
 
 
-
-
-
 /* ===============================================media Query===================================== */
 
-@media (max-width: 1200px){
+@media (max-width: 768px){
 
     #covid19_India h2{
-        /* margin-left: 30rem; */
-        text-align: center;
-        font-size: 2.0rem;
+        font-size: 2.5rem;             
     }
-    #covid19_India h3{
+    .table_Div h3{
+        font-size: 1.2rem; 
+    }
+
+    .tableIndia th {
+        font-size: 1.6rem;
+      }
+      .tableIndia .state_List td{
         font-size: 1.4rem;
     }
-    .table_Div{
-        margin-left: 7rem ;
+
+    #covid19_World h2{
+        font-size: 2.5rem;             
+    }
+    .table_DivWorld h3{
+        font-size: 1.2rem; 
     }
 
-    .table_Div .table tr th{
-        font-size: 1.8rem;
-        padding: 1rem 3rem;
-    }
-    
-    .table_Div .state_List tr td{
-        font-size: 1.8rem;
-        padding: 1rem 3rem;
-    
-    }
-    #covid19_World h3{
+    .tableWorld th {
+        font-size: 1.6rem;
+      }
+      .tableWorld .contry_List td{
         font-size: 1.4rem;
     }
-    .table_DivWorld{
-        margin-left: 7rem ;
-    }
-
-    .table_DivWorld .tableWorld tr th{
-        font-size: 1.8rem;
-        padding: 1rem 3rem;
-    }
-    
-    .table_DivWorld .contry_List tr td{
-        font-size: 1.8rem;
-        padding: 1rem 3rem;
-    }
-
-
- }
-
- @media (max-width: 990px){
-    .div_NavBar{
-        width: 100%;
-    }
-    .div_NavBar ul{
-        margin-right: 3rem;
-    }
-    .div_NavBar ul li a{
-        padding: 0.3rem;
-        font-size: 2.0rem; 
-    }
-    #covid19_India h2{
-         /* margin-left: 30rem; */
-         text-align: center;
-        font-size: 1.8rem;
-    }
-    #covid19_India h3{
-        font-size: 1.1rem;
-    }
-    .table_Div{
-        margin-left: 7rem ;
-    }
-
-    .table_Div .table tr th{
-        font-size: 1.6rem;
-        padding: 1rem 3rem;
-    }
-    
-    .table_Div .state_List tr td{
-        font-size: 1.6rem;
-        padding: 1rem 3rem;
-    
-    }
-    #covid19_World h2{
-        /* margin-left: 30rem; */
-        text-align: center;
-       font-size: 1.8rem;
-   }
-    #covid19_World h3{
-        font-size: 1.1rem;
-    }
-    .table_DivWorld{
-        margin-left: 7rem ;
-    }
-
-    .table_DivWorld .tableWorld tr th{
-        font-size: 1.6rem;
-        padding: 1rem 3rem;
-    }
-    
-    .table_DivWorld .contry_List tr td{
-        font-size: 1.6rem;
-        padding: 1rem 3rem;
-    }
-
-    .centre_Div{
-        width: 35%;
-    }
-    .centre_Div h2{
-        font-weight: 700;
-        font-size: 2.1rem;                
-    }
-    .notesList_Div{
-        width: 20%;
-        max-width: 50%;
-        height: 50%;    
-    }
-
-    .myBlogDiv{
-        margin: 0.6rem 27rem; 
-    }
-
 }
 
-@media (max-width: 790px){
-    body{
-        height: auto;
-     }
-    
-    .div_NavBar{
-        width: 100%;
+@media (max-width: 580px){
+    .navBar ul {
+        display: none;
     }
-    .div_NavBar ul{
-        margin-right: 2rem;
-    }
-    .div_NavBar ul li a{
-        padding: 0.3rem;
-        font-size: 1.8rem; 
-    }
-    img{
-        height: 18rem;
-        border-radius: 70%;
-    }
-    
-    .profile{
-        width: 25rem;
-        padding: 1.2rem 0;
-        margin-left: 35%;
-        margin-top: 6%;
-    }
-    .profilText h2{
-        font-size: 3.1rem;
-    }
-    .profilText h3{
-        font-size: 2.1rem;
-    }
-    .profilText p{
-        font-size: 1.6rem;
-    }
-    .profileFonts{
-        margin-top: 1.7rem;
-        font-size: 0.8rem;
+    .navBar .icon {
+        float: right;
+        display: block;
     }
 
-    #covid19_India h2{
-          /* margin-left: 30rem; */
-          text-align: center;
-        font-size: 1.8rem;
+    navBar.responsive {position: relative;}
+    .navBar.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
     }
-    #covid19_India h3{
-        font-size: 1.0rem;
-    }
-    .table_Div{
-        margin-left: 5rem ;
-    }
-
-    .table_Div .table tr th{
-        font-size: 1.3rem;
-        padding: 1rem 2rem;
-    }
-    
-    .table_Div .state_List tr td{
-        font-size: 1.3rem;
-        padding: 1rem 2rem;  
-    }
-    #covid19_World h2{
-        /* margin-left: 30rem; */
-        text-align: center;
-      font-size: 1.8rem;
-    }
-    #covid19_World h3{
-        font-size: 1.1rem;
-    }
-    .table_DivWorld{
-        margin-left: 7rem ;
-    }
-    .table_DivWorld .tableWorld tr th{
-        font-size: 1.6rem;
-        padding: 1rem 3rem;
-    }
-    .table_DivWorld .contry_List tr td{
-        font-size: 1.6rem;
-        padding: 1rem 3rem;
+    .navBar.responsive ul {
+        float: none;
+        display: block;
+        margin: auto;
     }
 
-    .centre_Div{
-        width: 45%;
-        margin-left: 30%;
+    .navBar.responsive ul ul{
+        display: none;
+        position: relative;
     }
-    .centre_Div h2{
-        font-weight: 600;
-        font-size: 2.1rem;                
-    }
-    .notesList_Div{
-        width: 25%;
-        max-width: 50%;
-        height: 50%;
+    .navBar.responsive ul li{
+        display: block; 
     }
 
-    .myBlogDiv{
-        margin: 0.6rem 22rem; 
-    }
-
-}
-
-@media (max-width: 660px){
-    .div_NavBar{
-        width: 100%;
-    }
-    .div_NavBar ul{
-        margin-right: 1rem;
-    }
-    .div_NavBar ul li a{
+    .navBar ul li a, .navBar ul ul li a {
+        font-size: 1.9rem;
         padding: 0.2rem;
-        font-size: 1.6rem; 
     }
-    img{
-        height: 17rem;
-        border-radius: 70%;
-    }
-    
+
     .profile{
-        width: 22rem;
-        padding: 1.2rem 0;
-        margin-left: 32%;
-        margin-top: 6%;
-    }
-    .profilText h2{
-        font-size: 2.6rem;
-    }
-    .profilText h3{
-        font-size: 1.6rem;
-    }
-    .profilText p{
-        font-size: 1.2rem;
-    }
-    .profileFonts{
-        margin-top: 0.6rem;
-        font-size: 0.6rem;
+        margin-top: 6rem;
     }
 
     #covid19_India h2{
-         /* margin-left: 30rem; */
-         text-align: center;
-        font-size: 1.5rem;
+        font-size: 2.2em;             
     }
-    #covid19_India h3{
-        font-size: 0.8rem;
-    }
-    .table_Div{
-        margin-left: 4rem;
+    .table_Div h3{
+        font-size: 0.9rem; 
     }
 
-    .table_Div .table tr th{
-        font-size: 1.1rem;
-        padding: 1rem 3rem;
-    }
-    
-    .table_Div .state_List tr td{
-        font-size: 1.1rem;
-        padding: 1rem 2rem;
-    }
-    #covid19_World h2{
-        /* margin-left: 30rem; */
-        text-align: center;
-        font-size: 1.5rem;
-    }
-    #covid19_World h3{
-        font-size: 0.8rem;
-    }
-    .table_DivWorld{
-        margin-left: 4rem;
-    }
-    .table_DivWorld .tableWorld tr th{
-        font-size: 1.1rem;
-        padding: 1rem 3rem;
-    }
-    .table_DivWorld .contry_List tr td{
-        font-size: 1.1rem;
-        padding: 1rem 2rem;
-    }
-
-    .centre_Div{
-        width: 50%;
-        margin-left: 30%;
-    }
-    .centre_Div h2{
-        font-weight: 500;
-        font-size: 2.0rem;;                
-    }
-    .notesList_Div{
-        width: 30%;
-        max-width: 50%;
-        height: 50%;
-        margin-left:6rem; 
-    }
-
-    .myBlogDiv{
-        margin: 0.6rem 18em; 
-    }
-
-}
-
-@media (max-width: 480px){
-    
-    .div_NavBar{
-        width: 100%;
-    }
-    .div_NavBar ul{
-        margin-right: 0.6rem;
-    }
-    .div_NavBar ul li a{
-        padding: 0.1rem;
-        font-size: 1.4rem; 
-    }
-    img{
-        height: 15rem;
-        border-radius: 70%;
-    }
-    
-    .profile{
-        width: 20rem;
-        padding: 1.2rem 0;
-        margin-left: 27%;
-        margin-top: 6%;
-    }
-    .profilText h2{
-        font-size: 2.1rem;
-    }
-    .profilText h3{
-        font-size: 1.4rem;
-    }
-    .profilText p{
+    .tableIndia th {
         font-size: 1.2rem;
-    }
-    .profileFonts{
-        margin-top: 1.1rem;
-        font-size: 0.5rem;
+      }
+      .tableIndia .state_List td{
+        font-size: 1.0rem;
+        padding: 0.8rem;
     }
 
-    #covid19_India h2{
-         /* margin-left: 30rem; */
-         text-align: center;
-        font-size: 1.0rem;
-    }
-    #covid19_India h3{
-        font-size: 0.8rem;
-    }
-    .table_Div{
-        margin-left: 3rem ;
-    }
-    .table_Div .table tr th{
-        font-size: 0.9rem;
-        padding: 1rem 1rem;
-    }
-    .table_Div .state_List tr td{
-        font-size: 0.9rem;
-        padding: 1rem 1.1rem;
-    }
     #covid19_World h2{
-        /* margin-left: 30rem; */
-        text-align: center;
-        font-size: 1.0rem;
+        font-size: 2.2em;             
     }
-    #covid19_World h3{
-        margin-left: 3rem ;
-    }
-    .table_DivWorld{
-        margin-left: 4rem;
-    }
-    .table_DivWorld .tableWorld tr th{
-        font-size: 0.9rem;
-        padding: 1rem 1rem;
-    }
-    .table_DivWorld .contry_List tr td{
-        font-size: 0.9rem;
-        padding: 1rem 1.1rem;
-    }
- 
-    .centre_Div{
-        width: 60%;
-        margin-left: 20%;
-    }
-    .centre_Div h2{
-        font-weight: 400;
-        font-size: 1.8rem;                
-    }
-    .notesList_Div{
-        width: 50%;
-        max-width: 100%;
-        height: 50%;
-        margin-left:12rem;
-       
+    .table_DivWorld h3{
+        font-size: 0.9rem; 
     }
 
-    .myBlogDiv{
-        margin: 0.6rem 13rem; 
-    }
-    .myBlogDiv .content_Div{
-        width: auto;
-        height: auto;
+    .tableWorld th {
+        font-size: 1.2rem;
+      }
+    .tableWorld .contry_List td{
+        font-size: 1.0rem;
+        padding: 0.8rem;
     }
 }
 
+@media (max-width: 468px){
+    #covid19_India h2{
+        font-size: 2.0em;             
+    }
+    .table_Div h3{
+        font-size: 0.7rem; 
+    }
+    .tableIndia th {
+        font-size: 0.9rem;
+      }
+      .tableIndia .state_List td{
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
 
+    #covid19_World h2{
+        font-size: 2.0em;             
+    }
+    .table_DivWorld h3{
+        font-size: 0.7rem; 
+    }
+    .tableWorld th {
+        font-size: 0.9rem;
+      }
+      .tableWorld .contry_List td{
+        font-size: 0.9rem;
+        padding: 0.6rem;
+    }
+}
 
+@media (max-width: 375px){
+    .tableIndia th {
+        font-size: 0.7rem;
+      }
+      .tableIndia .state_List td{
+        font-size: 0.7rem;
+        padding: 0.6rem;
+    }
 
+    .tableWorld th {
+        font-size: 0.7rem;
+      }
+      .tableWorld .contry_List td{
+        font-size: 0.7rem;
+        padding: 0.6rem;
+    }
+    
 
+}
