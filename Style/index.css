@@ -10,7 +10,7 @@ html{
 
 .backImg{
     width: 100%;
-    height: auto;
+    height: 100%;
     overflow: auto;
     background: url("../Images/bg3.jpg") transparent no-repeat fixed;
     background-size: 100% 100%; 
@@ -18,7 +18,7 @@ html{
  
 .mainDiv{
     width: 100%;
-    min-height: 100vh;
+    min-height: 92.3vh;
     height: 100%;
 }
 
@@ -27,7 +27,7 @@ html{
     width: 100%;
     height: 100%;
     background-color: rgba(15, 2, 2, 0.233);
-    transition: top 0.4s;
+    transition: top 0.4s;  
 }
 
 .navBar ul {
@@ -53,7 +53,6 @@ html{
     font-size: 2.4rem;
 }
 .icon{
-    display: block;
     font-size: 2rem;
     display: none;
     background-color: rgba(0, 0, 0, 0.333);
@@ -104,6 +103,7 @@ html{
     transform: translate(-50% , -50%);
     text-align: center;
     padding: 2rem 0;
+   
 }
 img{
     height: 22rem;
@@ -151,8 +151,6 @@ i{
     border-radius: 50%;
     margin-left: 1%;
 }
-
-
 
 /* .....................................div_Covid19 for India.................................... */
 
@@ -505,6 +503,9 @@ button.btn_Add:hover , button.btn_Add:focus, button.btn_Add:active{
 }
 
 @media (max-width: 580px){
+    .mainDiv{
+        min-height: 100vh;
+    }
     .navBar ul {
         display: none;
     }
@@ -541,6 +542,13 @@ button.btn_Add:hover , button.btn_Add:focus, button.btn_Add:active{
     .profile{
         margin-top: 6rem;
     }
+
+    .myAbout{
+        width: 30rem;
+        height: 30rem;
+        position: absolute;
+    }    
+
 
     #covid19_India h2{
         font-size: 2.2em;             
